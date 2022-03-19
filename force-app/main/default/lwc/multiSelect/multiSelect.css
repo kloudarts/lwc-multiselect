@@ -1,0 +1,33 @@
+.labelClass{
+    width: 100%;
+    position: relative;
+}
+
+.requiredAsterisk{
+    font-size: 145%;
+}
+
+.helpText{
+    position: absolute;
+    margin-left: -0.2rem;
+    bottom: 0.6rem;
+}
+
+.relativePosition{
+    position: relative;
+}
+
+.buttonWidth{
+    width: 11.25rem;
+}
+
+.dropdownButtonIconContainer{
+    position: absolute;
+    top: 0.9375rem;
+    left: 10rem;
+    z-index: 5;
+}
+
+.checkBox{
+    padding-top: 2.1rem;
+}

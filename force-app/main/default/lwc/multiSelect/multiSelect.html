@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-form-element">
+        <label class="slds-form-element__label slds-clearfix labelClass" for={fieldAPIName}>
+            <abbr class="slds-required requiredAsterisk" title="required" if:true={isRequired}>*</abbr>
+            {label}
+            &nbsp;<lightning-helptext class="helpText" content={helpText} if:true={helpText}></lightning-helptext>
+        </label>
+        <div class="slds-form-element__control">
+            <div class={multiSelectListClass} id={fieldAPIName}>
+                <button class="slds-button slds-button--neutral slds-picklist__label relativePosition buttonWidth" onclick={toggleMultiSelectPicklist}>
+                    <span class="slds-truncate slds-float_left" title="Select options...">{selectOptionText}</span>
+                    <lightning-icon icon-name="utility:down" size="small" class="slds-icon dropdownButtonIconContainer"></lightning-icon>
+                </button>
+                <div class="slds-dropdown slds-dropdown--left">
+                    <ul class="slds-dropdown__list slds-dropdown--length-3" role="menu">
+                        <template for:each={picklistEntries} for:item="picklistEntry">
+                            <c-picklist-item
+                                key={picklistEntry}
+                                picklist-entry={picklistEntry}
+                                selected-entries={selectedValues}
+                                onselectmultiselectvalue={updateSelectedValues}>
+                            </c-picklist-item>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
